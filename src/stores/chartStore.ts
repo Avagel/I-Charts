@@ -64,7 +64,7 @@ export const useChartStore = defineStore("chart", () => {
     let next: Candle[];
 
     const last = current[current.length - 1];
-
+    if (!last) return;
     if (!current.length || last.time !== candle.time) {
       // New candle — append and trim to cap
       next = current.length >= MAX_CANDLES ? [...current.slice(1), candle] : [...current, candle];

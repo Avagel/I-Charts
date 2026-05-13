@@ -94,6 +94,9 @@ onMounted(async () => {
     loading.value = false;
   }
 });
+const handleReload = () => {
+  window.location.reload();
+};
 </script>
 
 <template>
@@ -108,10 +111,7 @@ onMounted(async () => {
     class="h-screen flex flex-col items-center justify-center gap-3 px-6 text-center"
   >
     <p class="text-red-400 text-sm">{{ error }}</p>
-    <button
-      class="text-xs bg-accent text-bg-primary px-4 py-2 rounded-full"
-      @click="() => location.reload()"
-    >
+    <button class="text-xs bg-accent text-bg-primary px-4 py-2 rounded-full" @click="handleReload">
       Retry
     </button>
   </div>

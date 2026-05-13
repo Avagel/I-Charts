@@ -8,7 +8,6 @@ const router = createRouter({
   routes: [
     { path: "/", component: HomeView },
     { path: "/dashboard", component: HomeView },
-    { path: "/stock/:id", component: () => import("@/views/DetailView.vue") }, // lazy loaded
     { path: "/:pathMatch(.*)*", component: () => import("@/views/NotFound.vue") },
   ],
 });
